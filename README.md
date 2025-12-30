@@ -10,12 +10,19 @@ The pipeline provisions:
 - A Virtual Network (VNet)
 - Multiple Subnets (e.g., app + db)
 
-## Why This Matters
-This setup mirrors real-world DevOps workflows:
+## What I Deployed (Azure)
+Terraform provisions the following resources:
+
+- **Resource Group:** `rg-terraform-azdo-lab`
+- **Virtual Network:** `vnet-terraform-azdo-lab`
+- **Subnets:** `subnet-app`, `subnet-db`
+
+## Why This Is Portfolio-Worthy
+This setup mirrors a real DevOps pattern:
 - Infrastructure is defined as code (Terraform)
-- Changes are reviewed and deployed through a pipeline (Azure DevOps)
-- State is stored remotely (Azure Storage backend)
-- A self-hosted agent can be used when hosted parallelism is unavailable
+- Changes are executed via a CI/CD pipeline (Azure DevOps)
+- A self-hosted agent can unblock builds when Microsoft-hosted parallelism isn’t available
+- The workflow is repeatable and version-controlled
 
 ## Architecture (High Level)
 1. Developer pushes Terraform/YAML changes to Azure Repos
